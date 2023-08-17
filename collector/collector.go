@@ -50,7 +50,7 @@
 
   func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 	  ch <- prometheus.MustNewConstMetric(e.version, prometheus.GaugeValue, 0.8)
-	  e.total.Reset()
+	  //e.total.Reset()
 
 	  start++
 	  e.total.With(prometheus.Labels{"region_id": "region1", "instance_id": "instance1"}).Set(float64(start))
